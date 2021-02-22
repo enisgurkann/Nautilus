@@ -1,24 +1,22 @@
+using Nautilus.Core.Domain;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Nautilus.Data
 {
-    public class WeatherForecastService
+    public class JobService
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
+        public Task<Jobs[]> GetJobs()
         {
             var rng = new Random();
-            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new Jobs
             {
-                Date = startDate.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
             }).ToArray());
         }
     }
