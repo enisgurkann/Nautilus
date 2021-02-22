@@ -17,7 +17,6 @@ namespace Nautilus
         }
 
         public DbSet<Jobs> Jobs { get; set; }
-        public DbSet<JobSteps> JobSteps { get; set; }
 
 
 
